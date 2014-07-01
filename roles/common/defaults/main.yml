@@ -1,0 +1,17 @@
+---
+# defaults file for common
+base_pkgs:
+- "@Development Tools"
+- ncdu
+- git
+- tmux
+- vim-enhanced
+- logrotate
+- man
+- htop
+- ruby
+- rubygems
+- vim
+- emacs
+- nmap
+- wget

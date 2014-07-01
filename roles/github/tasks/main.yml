@@ -1,0 +1,13 @@
+---
+# tasks file for github
+- name: Add github.com to the known_hosts file
+  shell: ssh-keyscan -H github.com > /home/vagrant/.ssh/known_hosts
+
+- name: Ensure vagrant owns its known_hosts file
+  sudo: yes
+  file: path=/home/vagrant/.ssh/known_hosts owner=vagrant group=vagrant mode=0600 state=file
+
+- name: Copy the current hosts id_rsa to vagrant home folder
+  sudo: yes
+  sudo_user: vagrant
+  copy: src=~/.ssh/id_rsa dest=/home/vagrant/.ssh/id_rsa owner=vagrant group=vagrant mode=600
